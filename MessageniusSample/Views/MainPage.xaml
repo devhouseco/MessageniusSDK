@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage
+    x:Class="MessageniusSample.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:MessageniusSample.Views"
+    x:Name="mainPage">
+
+    <MasterDetailPage.Master>
+        <ContentPage
+            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+            Title=" "
+            ios:Page.UseSafeArea="True"
+            BackgroundColor="{StaticResource primaryColor}"
+            IconImageSource="hamburguer_icon.png">
+            <StackLayout
+                BackgroundColor="Transparent"
+                BindableLayout.ItemsSource="{Binding MenuItems}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+
+                            <Label
+                                Padding="{OnPlatform iOS='10,8', Android='10,12'}"
+                                Text="{Binding ItemName}"
+                                TextColor="White"
+                                VerticalTextAlignment="Center" />
+
+                            <BoxView
+                                HeightRequest="1"
+                                Opacity="0.4"
+                                Color="LightGray" />
+
+                            <StackLayout.GestureRecognizers>
+
+                                <TapGestureRecognizer Command="{Binding BindingContext.MenuItemTappedCommand,Source={x:Reference mainPage}}" CommandParameter="{Binding .}" Tapped="TapGestureRecognizer_Tapped" />
+
+                            </StackLayout.GestureRecognizers>
+
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+</MasterDetailPage>

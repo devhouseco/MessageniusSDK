@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="MessageniusSample.Views.SignupPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="True"
+    Title="{Binding Title}">
+    <ContentPage.Content>
+
+        <StackLayout
+            Padding="16,0"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="CenterAndExpand">
+
+            <Entry Placeholder="Email" Text="{Binding Email,Mode=TwoWay}" />
+            <Entry Placeholder="Username" Text="{Binding Username,Mode=TwoWay}" />
+            <Entry Placeholder="Password" Text="{Binding Password,Mode=TwoWay}" />
+            <Button
+                BackgroundColor="{StaticResource primaryColor}"
+                Command="{Binding SignupTappedCommand}"
+                Text="Signup"
+                TextColor="White" />
+            <Label
+                FontSize="Small"
+                HorizontalOptions="CenterAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Already have an account? " />
+                        <Span
+                            Text="Login here"
+                            TextColor="{StaticResource primaryColor}"
+                            TextDecorations="Underline" />
+                    </FormattedString>
+                </Label.FormattedText>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateToLoginPageCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

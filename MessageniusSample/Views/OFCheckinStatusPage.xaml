@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="MessageniusSample.Views.OFCheckinStatusPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Title}">
+
+    <ContentPage.Content>
+
+        <StackLayout
+            Padding="16,0"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="CenterAndExpand">
+
+            <Entry Placeholder="Order" Text="{Binding Order,Mode=TwoWay}" />
+            <Entry Placeholder="Room Id" Text="{Binding RoomId,Mode=TwoWay}" />
+            <Button
+                BackgroundColor="{StaticResource primaryColor}"
+                Command="{Binding CheckinStatusTappedCommand}"
+                Text="Checkin Status"
+                TextColor="White" />
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="MessageniusSample.Views.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="True"
+    Title="{Binding Title}">
+
+    <ContentPage.Content>
+
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Padding="16,0">
+
+            <Entry Placeholder="Username" Text="{Binding Username,Mode=TwoWay}" />
+            <Entry IsPassword="True" Placeholder="Password" Text="{Binding Password,Mode=TwoWay}" />
+            <Button Text="Login" BackgroundColor="{StaticResource primaryColor}" TextColor="White" Command="{Binding LoginTappedCommand}" />
+            <Label FontSize="Small" HorizontalOptions="CenterAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Not registered yet? " />
+                        <Span TextColor="{StaticResource primaryColor}" TextDecorations="Underline" Text="Signup here" />
+                    </FormattedString>
+                </Label.FormattedText>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateToSignupPageCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>
