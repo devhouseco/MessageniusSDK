@@ -1,65 +1,65 @@
 # MessageniusSDK
 
-##On Andriod 
+## On Andriod 
   initialize package before LoadApplication(new App());
   ```
   MessageniusSDK.Android.Messagenius.Init();
   ```
   
-##On IOS
+## On IOS
   initialize package before LoadApplication(new App());
   ```
   MessageniusSDK.iOS.Messagenius.Init();
   ```
   
-##Functions
+## Functions
   
-###Init
+### Init
   ```
   Messagenius.Current.Init(ApplicationId,Server,WindowsKey);
   ```
  
-###Login
+### Login
   ```
   Messagenius.Current.LoginAsync(Username, Password);
   ```
   
-###Signup
+### Signup
   ```
   Messagenius.Current.SignUpAsync(Username, Email, Password);
   ```
   
-###OFSendEvent
+### OFSendEvent
   ```
   Messagenius.Current.OFSendEvent(Type, Order, RoomId, LocationEnabled, startUtcTime.ToUnixTimeSeconds(), endUtcDate.ToUnixTimeSeconds(), Username);
   ```
   
-###OFSendPosition
+### OFSendPosition
   ```
   Messagenius.Current.OFSendPosition(Order,RoomId,Latitude,Longitude);
   ```
   
-###OFCheckinStatus
+### OFCheckinStatus
   ```
   Messagenius.Current.OFCheckinStatus(Order,RoomId,keyToCheck);
   ```
   
-###OFRegisterToken
+### OFRegisterToken
   ```
   Messagenius.Current.OFRegisterToken(Token,Device,Username);
   ```
   
-###OFUnregisterToken
+### OFUnregisterToken
   ```
   Messagenius.Current.OFUnregisterToken(Username);
   ```
   
-###ClearSession
+### ClearSession
   ```
   Messagenius.Current.ClearSession();
   ```
   
-###Logout
+### Logout
   ```
   Messagenius.Current.LogOut();
   ```
